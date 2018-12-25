@@ -51,6 +51,7 @@ before_deploy:
       CC=x86_64-w64-mingw32-gcc  CXX=x86_64-w64-mingw32-g++  CGO_ENABLED=1 GOOS=windows GOARCH=amd64       go build -ldflags="$LD_FLAGS" -o build/gotify-windows-amd64.exe;
       CC=aarch64-linux-gnu-gcc   CXX=aarch64-linux-gnu-g++   CGO_ENABLED=1 GOOS=linux   GOARCH=arm64       go build -ldflags="$LD_FLAGS" -o build/gotify-linux-arm64;
       CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ CGO_ENABLED=1 GOOS=linux   GOARCH=arm GOARM=7 go build -ldflags="$LD_FLAGS" -o build/gotify-linux-arm-7;
+      CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ CGO_ENABLED=1 GOOS=linux   GOARCH=arm GOARM=6 go build -ldflags="$LD_FLAGS" -o build/gotify-linux-arm-6;
       make package-zip;
       ls -lath build;
       make build-docker;
