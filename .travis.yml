@@ -29,6 +29,7 @@ before_install:
 install:
   - dep ensure -v
   - (cd ui && npm install)
+  - ldd --version
 
 script:
 # packr builds a go file for all packr "boxes", this would be f.ex. the spec.json file.
